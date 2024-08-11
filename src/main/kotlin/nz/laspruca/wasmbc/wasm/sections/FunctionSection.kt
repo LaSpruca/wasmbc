@@ -15,4 +15,4 @@ class FunctionSection(val functions: List<UInt>) : Section() {
 }
 
 fun parseFunctionSection(wasm: WasmReader) =
-    FunctionSection(wasm.run(readVector { wasm -> wasm.runBytes(::readUnsigned) }))
+    FunctionSection(wasm.run(readVector { it.runBytes(::readUnsigned) }))

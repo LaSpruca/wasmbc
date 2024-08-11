@@ -1,10 +1,11 @@
 package nz.laspruca
 
-import nz.laspruca.wasmbc.WasmStr
-
 object Helper {
     @JvmStatic
-    fun say(@WasmStr str: String?) {
+    fun say(str: String) {
         println(str)
     }
+
+    @JvmStatic
+    fun add(a: Int, b: Int) = a + b
 }

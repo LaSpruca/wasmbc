@@ -4,8 +4,8 @@ import nz.laspruca.wasmbc.wasm.WasmReader
 import nz.laspruca.wasmbc.wasm.readNextByte
 import nz.laspruca.wasmbc.wasm.readVector
 
-data class FunctionType(val t1: List<ValueType>, val t2: List<ValueType>) {
-    override fun toString(): String = "Fn(${t1.joinToString(", ")}) -> (${t2.joinToString(", ")})"
+data class FunctionType(val from: List<ValueType>, val to: List<ValueType>) {
+    override fun toString(): String = "(${from.joinToString(", ")}) -> (${to.joinToString(", ")})"
 }
 
 @OptIn(ExperimentalStdlibApi::class)

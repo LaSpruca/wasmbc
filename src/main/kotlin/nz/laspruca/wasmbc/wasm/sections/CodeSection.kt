@@ -1,7 +1,6 @@
 package nz.laspruca.wasmbc.wasm.sections
 
 import nz.laspruca.wasmbc.wasm.WasmReader
-import nz.laspruca.wasmbc.wasm.datatypes.Code
 import nz.laspruca.wasmbc.wasm.datatypes.parseCode
 import nz.laspruca.wasmbc.wasm.readVector
 

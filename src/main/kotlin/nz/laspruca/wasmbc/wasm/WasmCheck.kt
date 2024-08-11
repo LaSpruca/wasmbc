@@ -1,5 +1,7 @@
 package nz.laspruca.wasmbc.wasm
 
+import nz.laspruca.wasmbc.Module
+
 private val MAGIC_NUMBER = byteArrayOf(0x00, 0x61, 0x73, 0x6D)
 private val VERSION = byteArrayOf(0x01, 0x00, 0x00, 0x00)
 
@@ -19,5 +21,5 @@ fun parseWasm(bytes: ByteArray): Module {
     val wasm = WasmReader(bytes)
 
     checkModule(wasm)
-    return parseModule(wasm)
+    return Module(wasm)
 }

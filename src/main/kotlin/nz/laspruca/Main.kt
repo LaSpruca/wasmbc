@@ -1,13 +1,14 @@
 package nz.laspruca
 
-import nz.laspruca.wasmbc.module.validateModule
+import nz.laspruca.wasmbc.ModuleClassBuilder
 import nz.laspruca.wasmbc.wasm.parseWasm
 import java.io.File
 
 fun main() {
     val bytes = File("target.wasm").readBytes()
-    val rawModule = parseWasm(bytes)
-    rawModule.printDetails()
+    val module = parseWasm(bytes)
 
-    var module = validateModule(rawModule)
+    module.printDetails()
+
+    val cb = ModuleClassBuilder(module, Application::class.java)
 }
